@@ -1,0 +1,11 @@
+{
+  "tareas": [],
+  "usuarios": [
+    {
+      "id": "25cc",
+      "nombreCompleto": "Ismael Marín",
+      "correo": "correo@ejemplo.com",
+      "contrasena": "12345678"
+    }
+  ]
+}
