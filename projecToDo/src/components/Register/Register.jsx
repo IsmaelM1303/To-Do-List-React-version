@@ -1,7 +1,9 @@
 import { useState } from "react"
 import { create } from "../api/Crud"
+import { useNavigate } from "react-router-dom"
 
 function Register() {
+    const navigate = useNavigate()
     const [nuevoUsuario, setnuevoUsuario] = useState({
         nombreCompleto: "",
         correo: "",
@@ -70,6 +72,8 @@ function Register() {
 
         console.log("Datos registrados:", datosFinales)
         create("usuarios", nuevoUsuario)
+        navigate("/Login")
+        
     }
 
     return (

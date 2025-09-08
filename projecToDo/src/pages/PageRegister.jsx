@@ -1,5 +1,5 @@
+import BotonVolver from '../components/general/BotonVolver'
 import Header from '../components/general/Header'
-import Login from '../components/login/Login'
 import Register from '../components/register/Register'
 
 function PageRegister() {
@@ -7,6 +7,7 @@ function PageRegister() {
         <div>
             <Header/>
             <Register/>
+            <BotonVolver/>
         </div>
     )
 }

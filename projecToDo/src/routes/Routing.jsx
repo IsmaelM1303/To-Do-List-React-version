@@ -4,6 +4,7 @@ import Index from '../pages/Index'
 import PageLogin from '../pages/PageLogin'
 import PageRegister from '../pages/PageRegister'
 import PageIndexLists from '../pages/PageIndexLists'
+import PagePerfil from '../pages/PagePerfil'
 
 function Routing() {
     return (
@@ -13,6 +14,8 @@ function Routing() {
                 <Route path='/Login' element={<PageLogin/>} />
                 <Route path='/Register' element={<PageRegister/>} />
                 <Route path='/Listas' element={<PageIndexLists/>} />
+                <Route path='/Perfil' element={<PagePerfil/>} />
+
             </Routes>
         </Router>
     )
