@@ -1,6 +1,6 @@
 import Header from '../components/general/Header'
-import GoToLogin from '../components/Login/GoToLogin'
-import GotoRegister from '../components/Register/GoToRegister'
+import GoToLogin from '../components/login/GoToLogin'
+import GotoRegister from '../components/register/GoToRegister'
 
 function Index() {
     return (

@@ -1,6 +1,9 @@
 import { useState } from "react"
+import { getAll } from "../api/Crud"
+import {useNavigate} from "react-router-dom"
 
 function Login() {
+    const navigate = useNavigate()
     const [inputLogin, setInputLogin] = useState({
         correo: "",
         contrasena: ""
@@ -15,11 +18,32 @@ function Login() {
 
         if (name === "contrasena") {
             setInputLogin({ ...inputLogin, contrasena: value })
-        }        
+        }
     }
 
-    const manejoSubmit = (e) => {
-        
+    const manejoSubmit = async (e) => {
+        e.preventDefault()
+
+        try {
+            const usuarios = await getAll("usuarios")            
+
+            const usuarioEncontrado = usuarios.find(
+                u =>
+                    u.correo === inputLogin.correo &&
+                    u.contrasena === inputLogin.contrasena
+            )
+
+            if (usuarioEncontrado) {
+                console.log("Sesión iniciada");
+                localStorage.setItem('usuario', JSON.stringify({ usuarioEncontrado}))                
+                navigate("/Listas")
+                
+            } else {
+                console.log("Credenciales incorrectas")
+            }
+        } catch (error) {
+            console.error("Error al conectar con el servidor:", error)
+        }
     }
 
     return (

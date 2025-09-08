@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/general/Header'
-import Login from '../components/Login/Login'
+import Login from '../components/login/Login'
 
 function PageLogin() {
     return (
