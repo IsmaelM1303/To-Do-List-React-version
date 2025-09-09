@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom"
+import "../../styles/Header.css"
 
 function Header() {
     const navigate = useNavigate()
@@ -34,11 +35,11 @@ function Header() {
     const mostrarIrAPerfil = datos && datos.correo && !rutasSinPerfil.includes(ruta)
 
     return (
-        <div>
+        <header>
             <h1>To do App</h1>
             {mostrarCerrarSesion && <button onClick={cerrarSesion}>Cerrar Sesión</button>}
             {mostrarIrAPerfil && <button onClick={irAPerfil}>Ir a Perfil</button>}
-        </div>
+        </header>
     )
 }
 

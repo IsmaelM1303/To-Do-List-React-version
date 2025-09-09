@@ -19,7 +19,8 @@ function CrearTarea() {
             descripcion,
             activa,
             fecha,
-            idUsuario: usuario.usuarioEncontrado.id
+            idUsuario: usuario.usuarioEncontrado.id,
+            completa: false
         }
 
         console.log("Tarea creada:", nuevaTarea)
