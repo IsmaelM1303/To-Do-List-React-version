@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { update } from "../api/Crud"
-
 function EditarPerfil() {
     const usuario = JSON.parse(localStorage.getItem("usuario") || "{}")
 

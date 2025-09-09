@@ -1,10 +1,13 @@
 import Header from "../components/general/Header"
+import AddTask from "../components/IndexLists/AddTask"
+import SearchBar from "../components/IndexLists/SearchBar"
 
 function PageIndexLists() {
     return (
         <div>
             <Header/>
-            <h2>Esto es para que se muestren las Listas</h2>
+            <SearchBar/>
+            <AddTask/>
         </div>
     )
 }
