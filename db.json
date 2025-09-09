@@ -1,10 +1,45 @@
 {
-  "tareas": [],
+  "tareas": [
+    {
+      "id": "dbc1",
+      "nombre": "Prueba 1",
+      "descripcion": "Descripción prueba 1",
+      "activa": true,
+      "fecha": "2025-09-25"
+    },
+    {
+      "id": "e1e4",
+      "nombre": "Prueba 2",
+      "descripcion": "descripción prueba 2",
+      "activa": false,
+      "fecha": "2025-10-13"
+    },
+    {
+      "id": "b8dd",
+      "nombre": "Prueba 3",
+      "descripcion": "Descripción prueba 3",
+      "activa": true,
+      "fecha": "2025-09-19",
+      "idUsuario": "25cc"
+    }
+  ],
   "usuarios": [
     {
       "id": "25cc",
       "nombreCompleto": "Ismael Marín",
       "correo": "correo@ejemplo.com",
+      "contrasena": "12345678"
+    },
+    {
+      "id": "9795",
+      "nombreCompleto": "aaaaa bb",
+      "correo": "c@f.com",
+      "contrasena": "12345678"
+    },
+    {
+      "id": "8f36",
+      "nombreCompleto": "Adrian Campos Cisneros",
+      "correo": "adri@gmail.com",
       "contrasena": "12345678"
     }
   ]
