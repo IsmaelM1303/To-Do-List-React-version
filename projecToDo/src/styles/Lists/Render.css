@@ -1,0 +1,273 @@
+:root {
+    --color-negro: #000505;
+    --color-blush: #D36582;
+    --color-azul: #6B818C;
+    --color-peach: #F1BF98;
+    --color-blanco: #EEE5E9;
+
+    --translucido-blush: rgba(211, 101, 130, 0.25);
+    --translucido-azul: rgba(107, 129, 140, 0.25);
+    --translucido-peach: rgba(241, 191, 152, 0.25);
+    --translucido-azul-boton: rgba(107, 129, 140, 0.85);
+    --glow-suave: 0 0 6px rgba(241, 191, 152, 0.4);
+}
+
+/* Contenedor principal */
+.contenedor-tareas {
+    margin: 1rem 2rem;
+    font-family: sans-serif;
+}
+
+/* Botones de filtro */
+.grupo-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 2rem;
+    justify-content: center;
+}
+
+.grupo-botones button {
+    flex: 1 1 160px;
+    padding: 1rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border: none;
+    background-color: rgba(107, 129, 140, 0.68);
+    color: var(--color-blanco);
+    font-weight: 650;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    transition: all 0.3s ease;
+}
+
+.grupo-botones button:hover,
+.grupo-botones button.activo {
+    background-color: var(--color-blush);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(211, 101, 130, 0.4);
+}
+
+/* Filtro por fechas */
+.bloque-fechas {
+    background-color: var(--translucido-blush);
+    margin: 1rem 2rem;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    box-shadow: var(--glow-suave);
+}
+
+.bloque-fechas div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.bloque-fechas label {
+    color: var(--color-blanco);
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+.bloque-fechas input[type="date"],
+.bloque-fechas button {
+    font-family: sans-serif;
+    background-color: var(--color-blanco);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    color: var(--color-negro);
+}
+
+.bloque-fechas button {
+    background-color: var(--translucido-azul-boton);
+    color: var(--color-blanco);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bloque-fechas button:hover {
+    background-color: var(--color-peach);
+    color: var(--color-negro);
+}
+
+/* Estado de resultados */
+.estado-tareas {
+    margin: 1rem 2rem;
+    background-color: var(--translucido-peach);
+    color: var(--color-blanco);
+    font-weight: 600;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: var(--glow-suave);
+}
+
+/* Lista de tareas con scroll */
+.lista-tareas {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 2rem;
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-blush) var(--translucido-azul);
+}
+
+.lista-tareas::-webkit-scrollbar {
+    width: 8px;
+}
+
+.lista-tareas::-webkit-scrollbar-track {
+    background: var(--translucido-azul);
+    border-radius: 4px;
+}
+
+.lista-tareas::-webkit-scrollbar-thumb {
+    background-color: var(--color-blush);
+    border-radius: 4px;
+    border: 2px solid var(--translucido-azul);
+}
+
+.lista-tareas::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-peach);
+}
+
+/* Tarea individual */
+.tarea-item {
+    background-color: var(--translucido-azul);
+    backdrop-filter: blur(1.5px);
+    border-radius: 0.8rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 6px rgba(107, 129, 140, 0.3);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.6rem;
+    overflow-x: auto;
+}
+
+/* Etiquetas */
+.tarea-item label {
+    font-weight: 600;
+    color: var(--color-blanco);
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    white-space: nowrap;
+}
+
+/* Campos de texto */
+.tarea-item input[type="text"],
+.tarea-item input[type="date"],
+.tarea-item textarea {
+    background-color: rgba(238, 229, 233, 0.85);
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    color: var(--color-negro);
+    min-width: min(200px, 20vw);
+    max-width: 100%;
+    flex: 0 1 auto;
+    box-shadow: 0 0 4px rgba(107, 129, 140, 0.2);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    font-family: sans-serif;
+}
+
+/* Textarea específico */
+.tarea-item textarea {
+    resize: vertical;
+    min-height: 3.5rem;
+    line-height: 1.4;
+}
+
+.tarea-item textarea:focus {
+    outline: none;
+    background-color: rgba(238, 229, 233, 0.95);
+    box-shadow: 0 0 6px rgba(211, 101, 130, 0.4);
+}
+
+/* Checkbox */
+.tarea-item input[type="checkbox"] {
+    transform: scale(1.1);
+    margin-left: 0.5rem;
+}
+
+/* Botón de eliminar */
+.tarea-item button {
+    background-color: var(--color-blush);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.tarea-item button:hover {
+    background-color: var(--color-peach);
+    color: var(--color-negro);
+}
+
+/*Responsivo */
+@media (max-width: 768px) {
+    .grupo-botones {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4rem;
+        margin: 0;
+    }
+
+    .grupo-botones button {
+        flex: 1 1 40%;
+        max-width: 45%;
+        padding: 0.7rem 1rem;
+        /* más gruesos */
+        font-size: clamp(0.8rem, 2vw, 0.95rem);
+        font-weight: 700;
+        border-radius: 1rem;
+        background-color: rgba(107, 129, 140, 0.68);
+        color: var(--color-blanco);
+        box-shadow: none;
+        transition: none;
+    }
+
+    .grupo-botones button:hover,
+    .grupo-botones button.activo {
+        background-color: rgba(107, 129, 140, 0.68);
+        /* sin hover */
+        transform: none;
+        box-shadow: none;
+    }
+
+    .bloque-fechas div {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tarea-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+
+    .tarea-item input[type="text"],
+    .tarea-item input[type="date"],
+    .tarea-item textarea {
+        min-width: 100%;
+    }
+
+    .tarea-item button {
+        align-self: flex-end;
+    }
+}

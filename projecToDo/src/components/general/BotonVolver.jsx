@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import "../../styles/GoBack.css"
 
 function BotonVolver() {
     const navigate = useNavigate()
@@ -8,8 +9,10 @@ function BotonVolver() {
     }
 
     return (
-        <div>
-            <button onClick={volver}>Volver</button>
+        <div className="boton-volver-contenedor">
+            <button className="boton-volver" onClick={volver}>
+                Volver
+            </button>
         </div>
     )
 }

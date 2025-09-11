@@ -1,0 +1,44 @@
+:root {
+    --color-negro: #000505;
+    --color-blush: #D36582;
+    --color-azul: #6B818C;
+    --color-peach: #F1BF98;
+    --color-blanco: #EEE5E9;
+}
+
+.boton-volver-contenedor {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+}
+
+.boton-volver {
+    background-color: var(--color-blush);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 4px rgba(0, 5, 5, 0.2);
+}
+
+.boton-volver:hover {
+    background-color: var(--color-peach);
+    box-shadow: 0 0 6px rgba(0, 5, 5, 0.3);
+}
+
+@media (max-width: 480px) {
+    .boton-volver-contenedor {
+        padding: 1rem;
+    }
+
+    .boton-volver {
+        font-size: 0.95rem;
+        padding: 0.7rem 1rem;
+    }
+}

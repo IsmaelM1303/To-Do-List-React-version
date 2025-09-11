@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { create } from "../api/Crud"
+import "../../styles/Lists/Add.css"
 
 function CrearTarea() {
     const datos = localStorage.getItem('usuario');
