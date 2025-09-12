@@ -2,17 +2,15 @@ import Header from '../components/general/Header'
 import ValidacionLogin from '../components/general/ValidacionLogin'
 import GoToLogin from '../components/login/GoToLogin'
 import GotoRegister from '../components/register/GoToRegister'
-
+import "../styles/IndexStart.css"
 function Index() {
     return (
         <div>
-            <ValidacionLogin/>
-            <Header/>
-            <h1>Pagina inicio</h1>
-
-            <div>
-                <GoToLogin/>
-                <GotoRegister />
+            <ValidacionLogin />
+            <Header />
+            <div className='divContenedorIndex'>
+            <GoToLogin />
+            <GotoRegister />
             </div>
         </div>
     )

@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react"
 import { update } from "../api/Crud"
+import "../../styles/Perfil/Editar.css"
+
 function EditarPerfil() {
     const usuario = JSON.parse(localStorage.getItem("usuario") || "{}")
+    const [mostrarFormulario, setMostrarFormulario] = useState(false)
 
     const [DatosOriginales, setDatosOriginales] = useState({
         nombreCompleto: "",
@@ -59,7 +62,11 @@ function EditarPerfil() {
             }
         }
 
-        if (Object.keys(updates).length > 0 && usuario.usuarioEncontrado && usuario.usuarioEncontrado.id) {
+        if (
+            Object.keys(updates).length > 0 &&
+            usuario.usuarioEncontrado &&
+            usuario.usuarioEncontrado.id
+        ) {
             update("usuarios", usuario.usuarioEncontrado.id, updates)
 
             const nuevoUsuario = usuario
@@ -74,75 +81,90 @@ function EditarPerfil() {
 
             window.location.reload()
         }
-
-
     }
 
     return (
-        <div>
-            <h2>Editar perfil</h2>
+        <div className="editar-perfil">
+            <button
+                className="editar-perfil__toggle"
+                onClick={() => setMostrarFormulario(prev => !prev)}
+            >
+                Editar perfil
+            </button>
 
-            <div>
-                <h3>Ingresar datos</h3>
-                <label>
-                    Nombre completo
-                    <input
-                        name="nombreCompleto"
-                        value={DatosUsuario.nombreCompleto || ""}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    Correo
-                    <input
-                        name="correo"
-                        type="email"
-                        value={DatosUsuario.correo || ""}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    Contraseña
-                    <input
-                        name="contrasena"
-                        type="password"
-                        value={DatosUsuario.contrasena || ""}
-                        onChange={handleChange}
-                    />
-                </label>
-            </div>
+            {mostrarFormulario && (
+                <div className="editar-perfil__contenido">
+                    <div className="editar-perfil__bloque">
+                        <h3 className="editar-perfil__subtitulo">Ingresar datos</h3>
+                        <label className="editar-perfil__label">
+                            Nombre completo
+                            <input
+                                className="editar-perfil__input"
+                                name="nombreCompleto"
+                                value={DatosUsuario.nombreCompleto || ""}
+                                onChange={handleChange}
+                            />
+                        </label>
+                        <label className="editar-perfil__label">
+                            Correo
+                            <input
+                                className="editar-perfil__input"
+                                name="correo"
+                                type="email"
+                                value={DatosUsuario.correo || ""}
+                                onChange={handleChange}
+                            />
+                        </label>
+                        <label className="editar-perfil__label">
+                            Contraseña
+                            <input
+                                className="editar-perfil__input"
+                                name="contrasena"
+                                type="password"
+                                value={DatosUsuario.contrasena || ""}
+                                onChange={handleChange}
+                            />
+                        </label>
+                    </div>
 
-            <div>
-                <h3>Confirmar datos</h3>
-                <label>
-                    Nombre completo
-                    <input
-                        name="nombreCompleto"
-                        value={ConfirmarDatos.nombreCompleto || ""}
-                        onChange={handleConfirmChange}
-                    />
-                </label>
-                <label>
-                    Correo
-                    <input
-                        name="correo"
-                        type="email"
-                        value={ConfirmarDatos.correo || ""}
-                        onChange={handleConfirmChange}
-                    />
-                </label>
-                <label>
-                    Contraseña
-                    <input
-                        name="contrasena"
-                        type="password"
-                        value={ConfirmarDatos.contrasena || ""}
-                        onChange={handleConfirmChange}
-                    />
-                </label>
-            </div>
+                    <div className="editar-perfil__bloque">
+                        <h3 className="editar-perfil__subtitulo">Confirmar datos</h3>
+                        <label className="editar-perfil__label">
+                            Nombre completo
+                            <input
+                                className="editar-perfil__input"
+                                name="nombreCompleto"
+                                value={ConfirmarDatos.nombreCompleto || ""}
+                                onChange={handleConfirmChange}
+                            />
+                        </label>
+                        <label className="editar-perfil__label">
+                            Correo
+                            <input
+                                className="editar-perfil__input"
+                                name="correo"
+                                type="email"
+                                value={ConfirmarDatos.correo || ""}
+                                onChange={handleConfirmChange}
+                            />
+                        </label>
+                        <label className="editar-perfil__label">
+                            Contraseña
+                            <input
+                                className="editar-perfil__input"
+                                name="contrasena"
+                                type="password"
+                                value={ConfirmarDatos.contrasena || ""}
+                                onChange={handleConfirmChange}
+                            />
+                        </label>
+                    </div>
 
-            <button onClick={guardarCambios}>Guardar cambios</button>
+                    <button className="editar-perfil__boton" onClick={guardarCambios}>
+                        Guardar cambios
+                    </button>
+                </div>
+            )}
         </div>
     )
 }

@@ -31,14 +31,32 @@ function Header() {
     const rutasSinSesion = ["/", "/Login", "/Register"]
     const rutasSinPerfil = [...rutasSinSesion, "/Perfil"]
 
-    const mostrarCerrarSesion = datos && datos.correo && !rutasSinSesion.includes(ruta)
-    const mostrarIrAPerfil = datos && datos.correo && !rutasSinPerfil.includes(ruta)
+    const mostrarCerrarSesion =
+        datos && datos.correo && !rutasSinSesion.includes(ruta)
+    const mostrarIrAPerfil =
+        datos && datos.correo && !rutasSinPerfil.includes(ruta)
 
     return (
-        <header>
-            <h1>To do App</h1>
-            {mostrarCerrarSesion && <button onClick={cerrarSesion}>Cerrar Sesión</button>}
-            {mostrarIrAPerfil && <button onClick={irAPerfil}>Ir a Perfil</button>}
+        <header className="header">
+            <h1 className="header__titulo">To do App</h1>
+            <div className="header__acciones">
+                {mostrarIrAPerfil && (
+                    <button
+                        className="header__boton header__boton--perfil"
+                        onClick={irAPerfil}
+                    >
+                        Ir a Perfil
+                    </button>
+                )}
+                {mostrarCerrarSesion && (
+                    <button
+                        className="header__boton header__boton--cerrar"
+                        onClick={cerrarSesion}
+                    >
+                        Cerrar Sesión
+                    </button>
+                )}
+            </div>
         </header>
     )
 }

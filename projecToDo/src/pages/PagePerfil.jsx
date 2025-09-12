@@ -9,9 +9,9 @@ function PagePerfil() {
     return (
         <div>
             <Header/>
+            <BotonVolver/>
             <MostrarPerfil/>
             <EditarPerfil/>
-            <BotonVolver/>
         </div>
     )
 }

@@ -12,13 +12,11 @@
     --glow-suave: 0 0 6px rgba(241, 191, 152, 0.4);
 }
 
-/* Contenedor principal */
 .contenedor-tareas {
     margin: 1rem 2rem;
     font-family: sans-serif;
 }
 
-/* Botones de filtro */
 .grupo-botones {
     display: flex;
     flex-wrap: wrap;
@@ -47,7 +45,6 @@
     box-shadow: 0 0 10px rgba(211, 101, 130, 0.4);
 }
 
-/* Filtro por fechas */
 .bloque-fechas {
     background-color: var(--translucido-blush);
     margin: 1rem 2rem;
@@ -94,7 +91,6 @@
     color: var(--color-negro);
 }
 
-/* Estado de resultados */
 .estado-tareas {
     margin: 1rem 2rem;
     background-color: var(--translucido-peach);
@@ -107,7 +103,19 @@
     box-shadow: var(--glow-suave);
 }
 
-/* Lista de tareas con scroll */
+.tareasVacias {
+    margin: 1rem 2rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--translucido-azul);
+    color: var(--color-blanco);
+    font-weight: 600;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    text-align: center;
+    border-radius: 0.6rem;
+    box-shadow: var(--glow-suave);
+    font-family: sans-serif;
+}
+
 .lista-tareas {
     list-style: none;
     padding: 0;
@@ -138,7 +146,6 @@
     background-color: var(--color-peach);
 }
 
-/* Tarea individual */
 .tarea-item {
     background-color: var(--translucido-azul);
     backdrop-filter: blur(1.5px);
@@ -154,7 +161,6 @@
     overflow-x: auto;
 }
 
-/* Etiquetas */
 .tarea-item label {
     font-weight: 600;
     color: var(--color-blanco);
@@ -162,7 +168,6 @@
     white-space: nowrap;
 }
 
-/* Campos de texto */
 .tarea-item input[type="text"],
 .tarea-item input[type="date"],
 .tarea-item textarea {
@@ -180,7 +185,6 @@
     font-family: sans-serif;
 }
 
-/* Textarea específico */
 .tarea-item textarea {
     resize: vertical;
     min-height: 3.5rem;
@@ -193,13 +197,11 @@
     box-shadow: 0 0 6px rgba(211, 101, 130, 0.4);
 }
 
-/* Checkbox */
 .tarea-item input[type="checkbox"] {
     transform: scale(1.1);
     margin-left: 0.5rem;
 }
 
-/* Botón de eliminar */
 .tarea-item button {
     background-color: var(--color-blush);
     color: var(--color-blanco);
@@ -218,7 +220,6 @@
     color: var(--color-negro);
 }
 
-/*Responsivo */
 @media (max-width: 768px) {
     .grupo-botones {
         flex-direction: row;
@@ -232,7 +233,6 @@
         flex: 1 1 40%;
         max-width: 45%;
         padding: 0.7rem 1rem;
-        /* más gruesos */
         font-size: clamp(0.8rem, 2vw, 0.95rem);
         font-weight: 700;
         border-radius: 1rem;
@@ -245,7 +245,6 @@
     .grupo-botones button:hover,
     .grupo-botones button.activo {
         background-color: rgba(107, 129, 140, 0.68);
-        /* sin hover */
         transform: none;
         box-shadow: none;
     }

@@ -1,4 +1,3 @@
-import React from "react"
 import "../../styles/Lists/Render.css"
 
 function Render({
@@ -95,7 +94,7 @@ function Render({
                         })}
                     </ul>
                 ) : (
-                    <p>No hay tareas para mostrar.</p>
+                    <p className="tareasVacias">No hay tareas para mostrar.</p>
                 )}
             </div>
         </div>

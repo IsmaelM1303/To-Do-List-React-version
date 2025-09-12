@@ -3,9 +3,8 @@ import { create } from "../api/Crud"
 import "../../styles/Lists/Add.css"
 
 function CrearTarea() {
-    const datos = localStorage.getItem('usuario');
-    const usuario = JSON.parse(datos);
-    
+    const datos = localStorage.getItem('usuario')
+    const usuario = JSON.parse(datos)
 
     const [nombre, setNombre] = useState("")
     const [descripcion, setDescripcion] = useState("")
@@ -14,6 +13,11 @@ function CrearTarea() {
 
     const manejoSubmit = (e) => {
         e.preventDefault()
+
+        if (!nombre.trim() || !fecha.trim()) {
+            alert("Por favor completa el nombre y la fecha antes de crear la tarea")
+            return
+        }
 
         const nuevaTarea = {
             nombre,
@@ -71,7 +75,12 @@ function CrearTarea() {
                     onChange={(e) => setFecha(e.target.value)}
                 />
 
-                <button type="submit">Crear Tarea</button>
+                <button
+                    type="submit"
+                    disabled={!nombre.trim() || !fecha.trim()}
+                >
+                    Crear Tarea
+                </button>
             </form>
         </div>
     )

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import "../../styles/Buttons.css"
 
 function GoToLogin() {
     const navigate = useNavigate()
@@ -8,7 +9,11 @@ function GoToLogin() {
     }
 
     return (
-        <button onClick={irALogin}>Iniciar Sesión</button>
+        <div className="boton-contenedor">
+            <button className="boton" onClick={irALogin}>
+                Iniciar Sesión
+            </button>
+        </div>
     )
 }
 

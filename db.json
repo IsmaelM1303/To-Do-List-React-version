@@ -1,11 +1,20 @@
 {
   "tareas": [
     {
-      "id": "96a6",
-      "nombre": "Prueba 5",
-      "descripcion": "asjdklfan",
-      "activa": true,
+      "id": "66c0",
+      "nombre": "Hola",
+      "descripcion": "Descripción hola",
+      "activa": false,
       "fecha": "2025-09-19",
+      "idUsuario": "25cc",
+      "completa": true
+    },
+    {
+      "id": "eb62",
+      "nombre": "Prueba 23",
+      "descripcion": "vneraoñknfssodnf",
+      "activa": false,
+      "fecha": "2025-09-13",
       "idUsuario": "25cc",
       "completa": false
     }

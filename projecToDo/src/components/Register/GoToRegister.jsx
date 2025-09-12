@@ -1,14 +1,20 @@
 import { useNavigate } from 'react-router-dom'
+import "../../styles/Buttons.css"
+
 
 function GoToLogin() {
     const navigate = useNavigate()
 
-    const irALogin = () => {
+    const irARegister = () => {
         navigate('/Register')
     }
 
     return (
-        <button onClick={irALogin}>Registrarse</button>
+        <div className="boton-contenedor">
+            <button className="boton" onClick={irARegister}>
+                Registrarse
+            </button>
+        </div>
     )
 }
 

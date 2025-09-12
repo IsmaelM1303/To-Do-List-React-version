@@ -1,0 +1,120 @@
+:root {
+    --color-negro: #000505;
+    --color-blush: #D36582;
+    --color-azul: #6B818C;
+    --color-peach: #F1BF98;
+    --color-blanco: #EEE5E9;
+
+    --translucido-blush: rgba(211, 101, 130, 0.25);
+    --translucido-azul: rgba(107, 129, 140, 0.25);
+    --glow-suave: 0 0 6px rgba(107, 129, 140, 0.4);
+}
+
+.editar-perfil {
+    margin: 1.5rem 2rem;
+    font-family: sans-serif;
+    width: 90vw ;
+}
+
+.editar-perfil__toggle {
+    width: 95vw;
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    font-weight: 700;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    cursor: pointer;
+    box-shadow: var(--glow-suave);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.editar-perfil__toggle:hover {
+    background-color: var(--color-blush);
+    transform: scale(1.05);
+}
+
+.editar-perfil__contenido {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: var(--translucido-azul);
+    border-radius: 0.8rem;
+    box-shadow: var(--glow-suave);
+}
+
+.editar-perfil__bloque {
+    background-color: rgba(107, 129, 140, 0.15);
+    border-left: 4px solid var(--color-blush);
+    padding: 1rem;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.editar-perfil__subtitulo {
+    color: var(--color-blush);
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.editar-perfil__label {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-blanco);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.editar-perfil__input {
+    background-color: rgba(238, 229, 233, 0.85);
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    color: var(--color-negro);
+    margin-top: 0.2rem;
+    box-shadow: 0 0 4px rgba(107, 129, 140, 0.2);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.editar-perfil__input:focus {
+    outline: none;
+    background-color: rgba(238, 229, 233, 0.95);
+    box-shadow: 0 0 6px rgba(211, 101, 130, 0.4);
+}
+
+.editar-perfil__boton {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.6rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.editar-perfil__boton:hover {
+    background-color: var(--color-blush);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+    .editar-perfil {
+        padding: 1rem;
+    }
+
+    .editar-perfil__contenido {
+        padding: 1rem;
+    }
+
+    .editar-perfil__bloque {
+        margin-bottom: 0.8rem;
+    }
+
+    .editar-perfil__input {
+        font-size: 0.9rem;
+    }
+}

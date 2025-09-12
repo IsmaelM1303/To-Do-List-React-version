@@ -1,3 +1,5 @@
+import "../../styles/Perfil/Mostrar.css"
+
 function MostrarPerfil() {
     const guardado = localStorage.getItem("usuario")
     let usuario = {}
@@ -25,12 +27,13 @@ function MostrarPerfil() {
                     subValor = "********"
                 }
                 subLista.push(
-                    <li key={clave + "-" + subClave}>
-                        <strong>{subClave}:</strong> {String(subValor)}
+                    <li className="perfil__item" key={clave + "-" + subClave}>
+                        <strong className="perfil__clave">{subClave}:</strong>
+                        <span className="perfil__valor">{String(subValor)}</span>
                     </li>
                 )
             }
-            return <ul>{subLista}</ul>
+            return <ul className="perfil__sublista">{subLista}</ul>
         }
         return String(valor)
     }
@@ -46,25 +49,27 @@ function MostrarPerfil() {
                         subValor = "********"
                     }
                     listaElementos.push(
-                        <li key={subClave}>
-                            <strong>{subClave}:</strong> {String(subValor)}
+                        <li className="perfil__item" key={subClave}>
+                            <strong className="perfil__clave">{subClave}:</strong>
+                            <span className="perfil__valor">{String(subValor)}</span>
                         </li>
                     )
                 }
             }
         } else {
             listaElementos.push(
-                <li key={clave}>
-                    <strong>{clave}:</strong> {renderValor(clave, usuario[clave])}
+                <li className="perfil__item" key={clave}>
+                    <strong className="perfil__clave">{clave}:</strong>
+                    <span className="perfil__valor">{renderValor(clave, usuario[clave])}</span>
                 </li>
             )
         }
     }
 
     return (
-        <div>
-            <h2>Datos del usuario</h2>
-            <ul>{listaElementos}</ul>
+        <div className="perfil">
+            <h2 className="perfil__titulo">Datos del usuario</h2>
+            <ul className="perfil__lista">{listaElementos}</ul>
         </div>
     )
 }
